@@ -8,6 +8,6 @@ public class DockerHi {
 
 	@GetMapping("/")
 	public String hi(){
-		return "hi";
+		return "hi, 야호야호";
 	}
 }
