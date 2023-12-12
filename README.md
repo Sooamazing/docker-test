@@ -42,5 +42,14 @@ ENTRYPOINT ["java", "-jar", "./app.jar"]
 - git push origin <branch>
 
 - cached를 안 해서였는지, ignore에 *.properties 추가해도 그냥 올라가서 난감했음..
+  - test 완료. cache 명령어 안 쓰면 실제로 git add, commit 다 되고, cache 해당 파일 삭제 하면 ! 그때 ignore가 먹힘! cache 이후 add하니 하기 알림 문구 떴음! => 근데 -f로 push할 수 있는 건 무섭다.. 역시.. -f는 .. 가급적 쓰지 말아야지.. 어쩌다 환경변수 포함될 수 있겠군... 
+  - => 아 자동으로 변경한 내용 commit stage에 올라가는 명령어 공부하면 그것도 테스트해 봐야지.
+    ```agsl
+    The following paths are ignored by one of your .gitignore files:
+    ignore.md
+    hint: Use -f if you really want to add them.
+    hint: Turn this message off by running
+    hint: "git config advice.addIgnoredFile false"
+    ```
 
 => 올라갔을 때, reset하는 법, 올라갔을 때 커밋 기록에서는 이전에 잘못 올라간 내용이 보이는데, 이것까지 없애는 법? 결국 reset하고 ignore로 하는 수밖에는 없나?
